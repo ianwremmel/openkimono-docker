@@ -84,7 +84,7 @@ RUN mkdir -p "$GEM_HOME" "$BUNDLE_BIN" \
 # https://github.com/broadinstitute/docker-terraform/blob/master/Dockerfile
 #
 
-ENV TERRAFORM_VERSION=0.9.9
+ENV TERRAFORM_VERSION=0.10.6
 
 RUN apt-get update && apt-get install -y unzip jq
 
@@ -94,3 +94,5 @@ RUN cd /tmp && \
     rm -rf /tmp/*
 
 RUN gem install tracker-git
+
+RUN wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
